@@ -1,0 +1,14 @@
+%------------------- EBNF DA LINGUAGEM TINY -----------------------------%
+
+<program> ::= program <cmd-list>
+<cmd-list> ::= <cmd> <cmd-list> | <cmd>
+<cmd> ::= (<assign> | <output> | <if> | <while>) ;
+<assign> ::= id = <int-expr>
+<output> ::= output <int-expr>
+<if> ::= if <bool-expr> then <cmd-list> | else <cmd-list> done | <empty> done
+<while> ::= while <bool-expr> do <cmd-list> done
+<bool-expr> ::= false | true | <int-term> <rel_op> <int-term> | not <bool-expr>
+<int-expr> ::= <int-term> <arith_op> <int-term> | <int-term> <empty>
+<int-term> ::= id | const | read
+<rel_op> ::= == | != | < | > | <= | >=
+<arith_op> ::= + | - | * | /
