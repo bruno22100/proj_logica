@@ -93,7 +93,7 @@ token(S,T,Token,L):- sub_string(Sub1,S,0,1),
 concatenacao([],L2,L2).
 concatenacao(L1,[],L1).
 concatenacao([H|T],L2,[H|L]):- concatenacao(T,L2,L).
-
+ 
 %?- concatenacao([a,b],[d,c],L),write(L).
 
 lerLinha(File,[]):- feof(File).
